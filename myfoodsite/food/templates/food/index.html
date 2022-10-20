@@ -2,7 +2,8 @@
    
     <ul>
         <li>
-            {{ item.id }} -- {{ item.item_name }}
+            
+            <a href="{% url 'detail' item.id %}">{{ item.id }} -- {{ item.item_name }}</a>
         </li>
     </ul>
 {% endfor %}
