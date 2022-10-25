@@ -49,3 +49,6 @@ def delete_item(request, id):
           item.delete()
           return redirect('food:index')
      return render(request, 'food/item_delete.html', {'item':item})
+
+
+     
