@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('food/', include ('food.urls')), #don't forget the '/'
     path('register/', user_views.register, name='register'),
-    path('login/', authentication_views.LoginView.asview(), name='login'),
-    path('logout/', authentication_views.LogoutView.asview(), name='logout')
+    path('login/', authentication_views.LoginView.asview(template_name='users/login.html'), name='login'),
+    path('logout/', authentication_views.LogoutView.asview(template_name='users/logout.html'), name='logout')
     
 ]
