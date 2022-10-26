@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
+from django.contrib.auth import views as authentication_views #for login implementation
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('food/', include ('food.urls')), #don't forget the '/'
     path('register/', user_views.register, name='register'),
+    path('login/', authentication_views.LoginView.asview(), name='login'),
+    path('logout/', authentication_views.LogoutView.asview(), name='logout')
     
 ]
