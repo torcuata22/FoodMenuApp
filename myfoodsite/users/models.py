@@ -8,3 +8,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete= models.CASCADE) #associates User and Profile, now we can add fields:
     image = models.ImageField(default='profilepic.jpg', upload_to='profile_pictures')
     location=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.user.username

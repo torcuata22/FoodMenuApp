@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,6 +123,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'food:index'
 LOGIN_URL = 'login'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+MEDIA_URL='/pictures/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
