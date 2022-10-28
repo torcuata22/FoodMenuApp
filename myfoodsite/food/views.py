@@ -3,17 +3,15 @@ from django.shortcuts import render, redirect
 
 from .forms import ItemForm  
 from .models import Item
+
+from django.views.generic import ListView
 #from django.template import loader
 
-# Create your views here.
-def index(request):
-     item_list = Item.objects.all()
-     #template = loader.get_template('food/index.html')
-     context = {
-          'item_list': item_list,
-     }
-     #return HttpResponse(template.render(context,request))
-     return render(request, 'food/index.html', context)
+# Create your views here:
+class IndexClassView(ListView): 
+     model=Item
+     template_name= 'food/index.html'
+     context_object_name='item_list'  
 
 def item(request):
      return HttpResponse('<h1>This is the item view</h1>')
